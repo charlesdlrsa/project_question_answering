@@ -1,0 +1,59 @@
+
+
+{
+    'version' : #str de la version du dataset 2.0 ou 1.1
+    'data': [
+        #liste de 442 éléments (tous les articles je pense)
+            {
+                'title': #un texte –str-  – titre de l’article
+                'paragraphs': [
+                        #une liste avec n éléments (nbre de paragraphes)
+                        'context': #un texte - str- Le texte du paragraphe
+                        'qas': [
+                                #une liste avec m éléments (nbre de questions pour ce paragraphe)
+                                'id': #un texte –str-
+                                'is_impossible':
+                                'question': #un texte qui est la question
+                                'answers':
+                                    [
+                                    'answer_start': #int – quand commence la réponse dans le paragaphe
+                                    'text': #str – la partie du paragraphe qui répond
+                                    ]
+                                ]
+                            ]
+
+            }
+
+
+
+
+
+
+
+Chaque élément de la liste est un dictionnaire avec les clés
+“title” et “paragraphs” :
+
+“title” est un texte –str-  – titre de l’article
+
+“paragraphs” est une liste avec n éléments (nbre de paragraphes)
+
+Chaque élement de cette liste “paragraphs” est un dictionnaire avec comme clés “qas” et “context” :
+
+“context” est un texte - str- Le texte du paragraphe
+
+“qas” est une liste avec m éléments (nbre de questions pour ce paragraphe)
+
+Chaque élément est composé d’un dictionnaire avec 4 clés, “answers”; “id”; “is_impossible”;”question”
+
+“id” est un texte –str-
+
+“is_impossible” est un booléen
+
+“question” est un texte qui est la question
+
+“answers” est une liste de 0 ou 1 élément.
+
+0 élément si “is_impossble” = True
+
+1 élément sinon et on a alors un dictionnaire avec comme clé “answer_start”
+(=int – quand commence la réponse dans le paragaphe) et “text”(=str – la partie du paragraphe qui répond)
